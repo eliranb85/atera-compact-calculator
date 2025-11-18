@@ -1,0 +1,381 @@
+.wp-block-post-title{
+    display: none;
+}
+.atera-compact-calculator {
+	font-family: "Atera Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #EDEDED;
+}
+
+/* Ensure the wrapping constrained group that usually contains the calculator inherits the same background */
+.wp-block-group.alignfull.has-global-padding.is-layout-constrained.wp-block-group-is-layout-constrained {
+	background: #EDEDED;
+}
+
+.atera-cc {
+	height: 644.29px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+	max-width: 1401px !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.atera-cc__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 24px;
+	align-items: start;
+}
+
+.atera-cc__intro {
+	width: 447px;
+}
+.atera-cc__intro .atera-cc__headline {
+	margin: 0;
+	font-family: "Nekst", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 1;
+	color: #1A1A1A;
+	letter-spacing: 0;
+}
+.atera-cc__headline-sub {
+	margin: 8px 0 0;
+	font-size: 16px;
+	color: #475569;
+}
+@media (min-width: 1024px) {
+.atera-cc__panel {
+	border-radius: 12px;
+	background: #ffffff;
+	border: 1px solid #e6e6e6;
+	padding: 20px;
+}
+}
+.atera-cc__panel--calc {
+	background: #EDEDED;
+	border: 1px solid #1A1A1A;
+	width: 565px;
+	height: 449.29px;
+	min-height: 449.29px;
+	max-height: 449.29px;
+	box-sizing: border-box;
+}
+.atera-cc__panel--result {
+	margin:0 auto;
+	background: #0b2e2e;
+	border: 1px solid #0b2e2e;
+	color: #ecfeff;
+	padding: 24px;
+	height: 449.29px;
+	min-height: 449.29px;
+	max-height: 449.29px;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+
+.atera-cc__panel-header {
+	margin-bottom: 8px;
+}
+.atera-cc__panel-title {
+	font-family: "Gellix", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	color: #1A1A1A;
+}
+
+.atera-cc__sliders {
+	display: grid;
+	gap: 16px;
+}
+.atera-cc__slider {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	gap: 8px;
+}
+.atera-cc__slider-label {
+	font-family: "Gellix", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #1A1A1A;
+	margin-bottom: 16px;
+}
+.atera-cc__slider-value {
+	font-size: 12px;
+	color: #0f172a;
+	font-weight: 600;
+	margin-bottom: 16px;
+}
+.atera-cc__range {
+	grid-column: 1 / -1;
+	margin-bottom: 16px;
+	-webkit-appearance: none;
+	appearance: none;
+	height: 3px;
+	border-radius: 999px;
+	background: #E5E5E5; /* Light gray for inactive part - will be updated by JS */
+	outline: none;
+}
+.atera-cc__range::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 3px;
+	border-radius: 999px;
+	background: transparent; /* Will be controlled by parent background */
+}
+.atera-cc__range::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	border-radius: 999px;
+	background: #D1AD78;
+	cursor: pointer;
+	box-shadow: 0 0 0 2px #ffffff;
+	margin-top: -6.5px;
+}
+.atera-cc__range::-moz-range-track {
+	width: 100%;
+	height: 3px;
+	border-radius: 999px;
+	background: #E5E5E5; /* Light gray for inactive part */
+}
+.atera-cc__range::-moz-range-thumb {
+	width: 16px;
+	height: 16px;
+	border-radius: 999px;
+	background: #D1AD78;
+	cursor: pointer;
+	border: 2px solid #ffffff;
+	box-shadow: none;
+}
+.atera-cc__ticks {
+	grid-column: 1 / -1;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 6px;
+}
+.atera-cc__tick {
+	color: #1A1A1A;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.atera-cc__actions {
+	display: none;
+}
+
+/* Result panel */
+.atera-cc__save-label {
+	font-family: "Gellix", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #EDEDED;
+}
+.atera-cc__save-value {
+	font-family: "Nekst", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	font-size: 56px;
+	font-weight: 600;
+	line-height: 1.1;
+	margin: 4px 0 6px;
+	color: #ecfeff;
+}
+.atera-cc__save-sub {
+	font-family: "Gellix", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #c7f9ff;
+	margin-bottom: 14px;
+}
+.atera-cc__email-wrapper {
+	margin-bottom: 16px;
+}
+/* Hide email field on desktop if disabled */
+@media (min-width: 1024px) {
+	.atera-compact-calculator[data-show-email-desktop="false"] .atera-cc__email-wrapper {
+		display: none;
+	}
+}
+/* Hide email field on mobile if disabled */
+@media (max-width: 1023px) {
+	.atera-compact-calculator[data-show-email-mobile="false"] .atera-cc__email-wrapper {
+		display: none;
+	}
+	.atera-cc__panel-title{
+		text-align: center;
+	}
+}
+.atera-cc__email {
+	width: 247px;
+	height: 42px;
+	padding: 0 16px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+	background: #EDEDED;
+	color: #797979;
+	font-family: "Gellix", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	box-sizing: border-box;
+}
+.atera-cc__email::placeholder {
+	color: #797979;
+}
+.atera-cc__email:focus {
+	outline: none;
+	border-color: rgba(255, 255, 255, 0.5);
+	background: #EDEDED;
+}
+.atera-cc__thank-you {
+	font-family: "Gellix", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #ecfeff;
+	width: 247px;
+	height: 42px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.atera-cc__cta {
+	appearance: none;
+	border: none;
+	border-radius: 10px;
+	background: #FF176B;
+	color: #ffffff;
+	width: 247px;
+	height: 42px;
+	padding: 0;
+	font-family: "Nekst", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	margin-bottom: 8px;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.atera-cc__cta-note {
+	font-size: 14px;
+	color: #EDEDED;
+	text-align: center;
+	margin-bottom: 16px;
+	width: 247px;
+}
+.atera-cc__cta:hover {
+	background: #e0145a;
+}
+.atera-cc__costs {
+	margin-top: auto;
+	font-size: 16px;
+}
+.atera-cc__costs-title {
+	
+	font-size: 16px;
+	color: #EDEDED;
+	margin-bottom: 8px;
+}
+.atera-cc__costs-row {
+	display: flex;
+	justify-content: space-between;
+	padding: 6px 0;
+	border-top: 1px solid #EDEDED
+}
+.atera-cc__costs-title + .atera-cc__costs-row {
+    border-top: none;
+}
+
+.atera-cc__costs-name {
+	font-size: 16px;
+	color: #ecfeff;
+}
+.atera-cc__costs-val {
+	font-size: 16px;
+	color: #ecfeff;
+}
+.atera-cc__footnote {
+	margin-top: 12px;
+	font-size: 10px;
+	color: rgba(255,255,255,0.7);
+}
+
+@media (max-width: 1023px) {
+	.atera-cc {
+		height: auto;
+		overflow: visible;
+	}
+	.atera-cc__grid {
+		justify-items: center;
+	}
+	.atera-cc__intro {
+		width: 360px;
+	}
+	.atera-cc__intro .atera-cc__headline {
+		font-size: 40px;
+		text-align: center;
+	}
+	.atera-cc__panel--calc {
+		border: none;
+		width: 380px;
+		height: auto;
+		min-height: auto;
+		max-height: none;
+	}
+	.atera-cc__panel--result {
+		width: 332px;
+		height: auto;
+		border-radius: 20px;
+	}
+	.atera-cc__save-value {
+		font-size: 48px;
+	}
+	.atera-cc__email,
+	.atera-cc__thank-you {
+		width: 266px;
+	}
+	.atera-cc__cta {
+		width: 266px;
+	}
+	.atera-cc__cta-note {
+		width: 266px;
+	}
+	.atera-cc__costs {
+		width: 266px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.atera-cc__grid {
+		grid-template-columns: 1.2fr 1.2fr 0.9fr;
+		gap: 32px;
+		column-gap: 26px;
+	}
+	.atera-cc__intro .atera-cc__headline {
+		font-size: 48px;
+	}
+	.atera-cc__email,
+	.atera-cc__thank-you {
+		width: 247px;
+	}
+	.atera-cc__cta {
+		width: 247px;
+	}
+	.atera-cc__cta-note {
+		width: 247px;
+	}
+	.atera-cc__save-sub {
+		width: 247px;
+	}
+	.atera-cc__costs {
+		width: 247px;
+	}
+}
+

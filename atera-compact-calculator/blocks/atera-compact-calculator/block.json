@@ -1,0 +1,38 @@
+{
+	"apiVersion": 3,
+	"name": "atera/compact-calculator",
+	"title": "Atera Compact Calculator",
+	"category": "widgets",
+	"icon": "calculator",
+	"textdomain": "atera-compact-calculator",
+	"attributes": {
+		"title": { "type": "string", "default": "Estimate your annual savings" },
+		"subtitle": { "type": "string", "default": "" },
+		"slider1Label": { "type": "string", "default": "Technicians" },
+		"slider2Label": { "type": "string", "default": "Tickets / Month" },
+		"slider3Label": { "type": "string", "default": "Hourly Rate" },
+		"ctaText": { "type": "string", "default": "Calculate" },
+		"ctaUrl": { "type": "string", "default": "" },
+		"ctaNote": { "type": "string", "default": "No credit card required" },
+		"resultTitle": { "type": "string", "default": "Your estimated annual savings" },
+		"resultDescription": { "type": "string", "default": "" },
+		"panelTitle": { "type": "string", "default": "Adjust the scales below to see your savings:" },
+		"panelTitleFontSize": { "type": "number", "default": 16 },
+		"panelTitleColor": { "type": "string", "default": "#1A1A1A" },
+		"panelTitleBold": { "type": "boolean", "default": true },
+		"showSlider1": { "type": "boolean", "default": true },
+		"showSlider2": { "type": "boolean", "default": true },
+		"showSlider3": { "type": "boolean", "default": true },
+		"showEmailFieldDesktop": { "type": "boolean", "default": true },
+		"showEmailFieldMobile": { "type": "boolean", "default": true }
+	},
+	"supports": {
+		"align": [ "wide", "full" ],
+		"spacing": { "margin": true, "padding": true }
+	},
+	"editorScript": "atera-cc-editor",
+	"script": "atera-cc-view",
+	"style": "atera-cc-style"
+}
+
+
